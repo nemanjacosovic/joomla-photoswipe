@@ -78,16 +78,18 @@ class plgJoomGalleryJoomPhotoswipe extends JoomOpenImagePlugin
     }
 
     // Add Photoswipe assets
-    $this->_doc->addScript(JURI::root().'media/plg_joomgallery_joomphotoswipe/klass.min.js');
+    $this->_doc->addScript(JURI::root().'media/plg_joomgallery_joomphotoswipe/klass.min.js'); // This might be a remain of JoomOpenImagePlugin
     if(!$this->_isMobile)
     {
-      // Load jQuery version for all browsers
-      $this->_doc->addScript(JURI::root().'media/plg_joomgallery_joomphotoswipe/code.photoswipe.jquery.min.js');
+      // Load PhotoSwipe version for all browsers
+      $this->_doc->addScript(JURI::root().'media/plg_joomgallery_joomphotoswipe/photoswipe.min.js');
+      $this->_doc->addScript(JURI::root().'media/plg_joomgallery_joomphotoswipe/photoswipe-ui-default.min.js');
     }
     else
     {
-      // Load optimized version for mobile devices
-      $this->_doc->addScript(JURI::root().'media/plg_joomgallery_joomphotoswipe/code.photoswipe.min.js');
+      // Load optimized version for mobile devices || #NOTE All versions are the same now
+      $this->_doc->addScript(JURI::root().'media/plg_joomgallery_joomphotoswipe/photoswipe.min.js');
+      $this->_doc->addScript(JURI::root().'media/plg_joomgallery_joomphotoswipe/photoswipe-ui-default.min.js');
     }
     // Add style sheets
     $this->_doc->addStyleSheet(JURI::root().'media/plg_joomgallery_joomphotoswipe/photoswipe.css');
