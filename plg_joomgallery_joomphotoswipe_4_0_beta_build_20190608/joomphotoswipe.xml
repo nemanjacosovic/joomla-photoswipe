@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="joomgallery" version="3.0" method="upgrade">
+  <name>plg_joomgallery_joomphotoswipe</name>
+  <creationDate>16.04.2013</creationDate>
+  <author>JoomGallery::Project Team</author>
+  <authorEmail>team@joomgallery.net</authorEmail>  
+  <authorUrl>www.joomgallery.net</authorUrl>
+  <copyright>(C) 2013 JoomGallery::Project Team</copyright>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <version>3.0 BETA</version>
+  <description>PLG_JOOMGALLERY_JOOMPHOTOSWIPE_DESC</description>
+  <files>
+    <filename plugin="joomphotoswipe">joomphotoswipe.php</filename>
+    <filename>Mobile_Detect.php</filename>    
+    <filename>index.html</filename>
+  </files>
+  <media destination="plg_joomgallery_joomphotoswipe" folder="media">
+    <filename>index.html</filename>
+    <filename>klass.min.js</filename>
+    <filename>code.photoswipe.jquery.min.js</filename>
+    <filename>code.photoswipe.min.js</filename>
+    <filename>photoswipe.css</filename>
+    <filename>error.gif</filename>
+    <filename>icons.png</filename>
+    <filename>icons-2x.png</filename>
+    <filename>loader.gif</filename>
+    <filename>MIT-license.txt</filename>
+  </media>
+  <languages>
+    <language tag="en-GB">language/en-GB/en-GB.plg_joomgallery_joomphotoswipe.ini</language>
+    <language tag="en-GB">language/en-GB/en-GB.plg_joomgallery_joomphotoswipe.sys.ini</language>
+    <language tag="de-DE">language/de-DE/de-DE.plg_joomgallery_joomphotoswipe.ini</language>
+    <language tag="de-DE">language/de-DE/de-DE.plg_joomgallery_joomphotoswipe.sys.ini</language>
+  </languages>
+  <config>
+    <fields name="params" addfieldpath="administrator/components/com_joomgallery/models/fields" addrulepath="administrator/components/com_joomgallery/models/rules">
+      <fieldset name="basic">
+        <field name="cfg_openimage" type="openimage" default="0" label="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_OPENIMAGE_LBL" description="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_OPENIMAGE_DESC" detail="true" defaultMethod="false" prefix="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_OPENIMAGE_">
+        </field>
+        <field name="cfg_operationmode" type="list" default="1" label="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_OPERATIONMODE_LBL" description="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_OPERATIONMODE_DESC">
+          <option value="0">PLG_JOOMGALLERY_JOOMPHOTOSWIPE_OPERATIONMODE_STANDARD_LBL</option>
+          <option value="1">PLG_JOOMGALLERY_JOOMPHOTOSWIPE_OPERATIONMODE_SLIDESHOW_LBL</option>
+        </field>
+        <field name="cfg_imagescalemethod" type="list" default="fit" label="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_IMAGESCALEMETHOD_LBL" description="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_IMAGESCALEMETHOD_DESC">
+          <option value="fit">PLG_JOOMGALLERY_JOOMPHOTOSWIPE_IMAGESCALEMETHOD_FIT_LBL</option>
+          <option value="fitNoUpscale">PLG_JOOMGALLERY_JOOMPHOTOSWIPE_IMAGESCALEMETHOD_FITNOUPSCALE_LBL</option>
+          <option value="zoom">PLG_JOOMGALLERY_JOOMPHOTOSWIPE_IMAGESCALEMETHOD_ZOOM_LBL</option>
+        </field>          
+        <field name="cfg_loop" class="btn-group" type="radio" default="1" label="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_LOOP_LBL" description="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_LOOP_DESC">
+          <option value="0">PLG_JOOMGALLERY_JOOMPHOTOSWIPE_NO_LBL</option>
+          <option value="1">PLG_JOOMGALLERY_JOOMPHOTOSWIPE_YES_LBL</option>
+        </field>    
+        <field name="cfg_slidespeed" class="validate-numeric" type="text" default="250" label="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_SLIDESPEED_LBL" description="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_SLIDESPEED_DESC" required="true"/>          
+        <field name="cfg_fadespeed" class="validate-numeric" type="text" default="250" label="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_FADESPEED_LBL" description="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_FADESPEED_DESC" required="true"/>          
+        <field name="cfg_zindex" class="validate-numeric" type="text" default="1000" label="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_ZINDEX_LBL" description="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_ZINDEX_DESC" required="true"/>          
+      </fieldset>
+      <fieldset name="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_TOOLBARANDCAPTION_PARAMETER_LBL" label="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_TOOLBARANDCAPTION_PARAMETER_LBL">
+        <field name="cfg_captionandtoolbarhide" class="btn-group" type="radio" default="0" label="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_CPHIDE_LBL" description="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_CPHIDE_DESC">
+          <option value="0">PLG_JOOMGALLERY_JOOMPHOTOSWIPE_NO_LBL</option>
+          <option value="1">PLG_JOOMGALLERY_JOOMPHOTOSWIPE_YES_LBL</option>
+        </field>    
+        <field name="cfg_captionandtoolbarautohidedelay" class="validate-numeric" type="text" default="5000" label="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_CPAUTOHIDEDELAY_LBL" description="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_CPAUTOHIDEDELAY_DESC" required="true"/>          
+        <field name="cfg_captionandtoolbarflipposition" class="btn-group" type="radio" default="0" label="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_CPFLIPPOSITION_LBL" description="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_CPFLIPPOSITION_DESC">
+          <option value="0">PLG_JOOMGALLERY_JOOMPHOTOSWIPE_NO_LBL</option>
+          <option value="1">PLG_JOOMGALLERY_JOOMPHOTOSWIPE_YES_LBL</option>
+        </field>    
+      </fieldset>
+      <fieldset name="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_SLIDESHOW_PARAMETER_LBL" label="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_SLIDESHOW_PARAMETER_LBL">
+        <field name="cfg_slideinterval" class="validate-numeric" type="text" default="3000" label="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_SLIDEINTERVAL_LBL" description="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_SLIDEINTERVAL_DESC" required="true"/>
+        <field name="cfg_slideautostart" class="btn-group" type="radio" default="1" label="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_SLIDEAUTOSTART_LBL" description="PLG_JOOMGALLERY_JOOMPHOTOSWIPE_SLIDEAUTOSTART_DESC">
+          <option value="0">PLG_JOOMGALLERY_JOOMPHOTOSWIPE_NO_LBL</option>
+          <option value="1">PLG_JOOMGALLERY_JOOMPHOTOSWIPE_YES_LBL</option>
+        </field>    
+      </fieldset>
+    </fields>
+  </config>
+  <updateservers>
+    <server type="collection" priority="1" name="JoomGallery Update Service">http://www.en.joomgallery.net/components/com_newversion/xml/extensions3.xml</server>
+  </updateservers>
+</extension>
