@@ -16,15 +16,30 @@
   </files>
   <media destination="plg_joomgallery_joomphotoswipe" folder="media">
     <filename>index.html</filename>
+    <filename>jquery-noconflict.js</filename>
+    <filename>jquery.min.js</filename>
     <filename>klass.min.js</filename>
-    <filename>code.photoswipe.jquery.min.js</filename>
-    <filename>code.photoswipe.min.js</filename>
-    <filename>photoswipe.css</filename>
-    <filename>error.gif</filename>
-    <filename>icons.png</filename>
-    <filename>icons-2x.png</filename>
-    <filename>loader.gif</filename>
     <filename>MIT-license.txt</filename>
+    <filename>photoswipe-init.js</filename>
+    <filename>photoswipe-ui-default.js</filename>
+    <filename>photoswipe-ui-default.min.js</filename>
+    <filename>photoswipe.css</filename>
+    <filename>photoswipe.js</filename>
+    <filename>photoswipe.min.js</filename>
+  </media>
+  <media destination="plg_joomgallery_joomphotoswipe" folder="default-skin">
+    <filename>index.html</filename>
+    <filename>jquery-noconflict.js</filename>
+    <filename>jquery.min.js</filename>
+    <filename>klass.min.js</filename>
+    <filename>MIT-license.txt</filename>
+    <filename>photoswipe-init.js</filename>
+    <filename>photoswipe-ui-default.js</filename>
+    <filename>photoswipe-ui-default.min.js</filename>
+    <filename>photoswipe.css</filename>
+    <filename>photoswipe.js</filename>
+    <filename>photoswipe.min.js</filename>
+    <folder>default-skin</folder>
   </media>
   <languages>
     <language tag="en-GB">language/en-GB/en-GB.plg_joomgallery_joomphotoswipe.ini</language>
